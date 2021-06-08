@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
+  <Header>
+    <Version>3.5.3.50</Version>
+    <SymbolConfigObject version="3.5.3.50" />
+    <ProjectInfo name="GersSciPal_Project" devicename="HMISCUxA5" appname="Application" />
+  </Header>
+  <TypeList>
+    <TypeSimple name="T_UDINT" size="4" swapsize="4" typeclass="UDInt" iecname="UDINT" />
+    <TypeSimple name="T_TIME" size="4" swapsize="4" typeclass="Time" iecname="TIME" />
+    <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
+    <TypeUserDef name="T__structModbusIn" size="8" nativesize="8" typeclass="Userdef" iecname="_structModbusIn">
+      <UserDefElement type="T_UDINT" iecname="ID" byteoffset="0" />
+      <UserDefElement type="T_INT" iecname="STATUT" byteoffset="4" />
+      <UserDefElement type="T_INT" iecname="reserve" byteoffset="6" />
+    </TypeUserDef>
+    <TypeSimple name="T_STRING_12_" size="13" swapsize="0" typeclass="String" iecname="STRING(12)" />
+    <TypeSimple name="T_STRING_8_" size="9" swapsize="0" typeclass="String" iecname="STRING(8)" />
+    <TypeSimple name="T_STRING_32_" size="33" swapsize="0" typeclass="String" iecname="STRING(32)" />
+    <TypeUserDef name="T__structModbusOut" size="108" nativesize="108" typeclass="Userdef" iecname="_structModbusOut">
+      <UserDefElement type="T_UDINT" iecname="CNT1" byteoffset="0" />
+      <UserDefElement type="T_UDINT" iecname="CNT2" byteoffset="4" />
+      <UserDefElement type="T_UDINT" iecname="ID" byteoffset="8" />
+      <UserDefElement type="T_INT" iecname="STATUT" byteoffset="12" />
+      <UserDefElement type="T_STRING_12_" iecname="OFNR" byteoffset="14" />
+      <UserDefElement type="T_STRING_8_" iecname="CODEM" byteoffset="27" />
+      <UserDefElement type="T_STRING_8_" iecname="OPERATION" byteoffset="36" />
+      <UserDefElement type="T_STRING_8_" iecname="ALEA" byteoffset="45" />
+      <UserDefElement type="T_STRING_32_" iecname="LIBELLE" byteoffset="54" />
+      <UserDefElement type="T_UDINT" iecname="HORODATAGE" byteoffset="88" />
+      <UserDefElement type="T_INT" iecname="VALEUR" byteoffset="92" />
+      <UserDefElement type="T_INT" iecname="RUN" byteoffset="94" />
+      <UserDefElement type="T_UDINT" iecname="CRTHORODATAGE" byteoffset="96" />
+      <UserDefElement type="T_UDINT" iecname="CADENCE" byteoffset="100" />
+      <UserDefElement type="T_UDINT" iecname="CADENCE_MOYENNE" byteoffset="104" />
+    </TypeUserDef>
+    <TypeUserDef name="T__structModbus" size="116" nativesize="116" typeclass="Userdef" iecname="_structModbus">
+      <UserDefElement type="T__structModbusIn" iecname="modbusIn" byteoffset="0" />
+      <UserDefElement type="T__structModbusOut" iecname="modbusOut" byteoffset="8" />
+    </TypeUserDef>
+    <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
+    <TypeUserDef name="T_alarmes" size="2" nativesize="2" typeclass="Userdef" iecname="alarmes">
+      <UserDefElement type="T_BOOL" iecname="attenteServeur" byteoffset="0" />
+      <UserDefElement type="T_BOOL" iecname="attenteMariadb" byteoffset="1" />
+    </TypeUserDef>
+    <TypeArray name="T_ARRAY__0__15__OF_BOOL" size="16" nativesize="16" typeclass="Array" iecname="ARRAY [0..15] OF BOOL" basetype="T_BOOL">
+      <ArrayDim minrange="0" maxrange="15" />
+    </TypeArray>
+    <TypeUserDef name="T__structMessage" size="51" nativesize="51" typeclass="Userdef" iecname="_structMessage">
+      <UserDefElement type="T_STRING_8_" iecname="ihmOperations" byteoffset="0" />
+      <UserDefElement type="T_STRING_8_" iecname="ihmAlea" byteoffset="9" />
+      <UserDefElement type="T_STRING_32_" iecname="ihmLabels" byteoffset="18" />
+    </TypeUserDef>
+    <TypeArray name="T_ARRAY__0__31__OF__structMessage" size="1632" nativesize="1632" typeclass="Array" iecname="ARRAY [0..31] OF _structMessage" basetype="T__structMessage">
+      <ArrayDim minrange="0" maxrange="31" />
+    </TypeArray>
+    <TypeUserDef name="T__structVoyant" size="4" nativesize="4" typeclass="Userdef" iecname="_structVoyant">
+      <UserDefElement type="T_BOOL" iecname="input" byteoffset="0" />
+      <UserDefElement type="T_BOOL" iecname="change" byteoffset="1" />
+      <UserDefElement type="T_INT" iecname="valeur" byteoffset="2" />
+    </TypeUserDef>
+    <TypeArray name="T_ARRAY__0__31__OF__structVoyant" size="128" nativesize="128" typeclass="Array" iecname="ARRAY [0..31] OF _structVoyant" basetype="T__structVoyant">
+      <ArrayDim minrange="0" maxrange="31" />
+    </TypeArray>
+    <TypeArray name="T_ARRAY__0__50__OF__structModbusOut" size="5508" nativesize="5508" typeclass="Array" iecname="ARRAY [0..50] OF _structModbusOut" basetype="T__structModbusOut">
+      <ArrayDim minrange="0" maxrange="50" />
+    </TypeArray>
+  </TypeList>
+  <NodeList>
+    <Node name="Application">
+      <Node name="GVL">
+        <Node name="alm" type="T_alarmes" access="ReadWrite" />
+        <Node name="CNT1" type="T_UDINT" access="ReadWrite" />
+        <Node name="CNT2" type="T_UDINT" access="ReadWrite" />
+        <Node name="CNT2ancien" type="T_UDINT" access="ReadWrite" />
+        <Node name="CODEM" type="T_STRING_8_" access="ReadWrite" />
+        <Node name="emptyMessage" type="T__structModbusOut" access="ReadWrite" />
+        <Node name="etatsVoyants" type="T_ARRAY__0__31__OF__structVoyant" access="ReadWrite" />
+        <Node name="fifo" type="T_ARRAY__0__50__OF__structModbusOut" access="ReadWrite" />
+        <Node name="fifoCount" type="T_INT" access="ReadWrite" />
+        <Node name="gvl_counterWatch_ptLife" type="T_TIME" access="ReadWrite" />
+        <Node name="gvl_counterWatch_ptRate" type="T_TIME" access="ReadWrite" />
+        <Node name="ihmButtons" type="T_ARRAY__0__15__OF_BOOL" access="ReadWrite" />
+        <Node name="ihmMessages" type="T_ARRAY__0__31__OF__structMessage" access="ReadWrite" />
+        <Node name="ihmOFRunning" type="T_BOOL" access="ReadWrite" />
+        <Node name="initFifoCount" type="T_BOOL" access="ReadWrite" />
+        <Node name="messageID" type="T_UDINT" access="ReadWrite" />
+        <Node name="modbusInOut" type="T__structModbus" access="ReadWrite" />
+        <Node name="OFNR" type="T_STRING_12_" access="ReadWrite" />
+        <Node name="Param_cycleTime" type="T_TIME" access="ReadWrite" />
+        <Node name="Param_limitTime" type="T_TIME" access="ReadWrite" />
+        <Node name="Param_maxTime" type="T_TIME" access="ReadWrite" />
+        <Node name="Param_minTime" type="T_TIME" access="ReadWrite" />
+        <Node name="Param_onOffTime" type="T_TIME" access="ReadWrite" />
+        <Node name="plcCycleTime" type="T_TIME" access="ReadWrite" />
+        <Node name="runAuto" type="T_BOOL" access="ReadWrite" />
+        <Node name="tmpMessage" type="T__structModbusOut" access="ReadWrite" />
+        <Node name="Unixtime" type="T_UDINT" access="ReadWrite" />
+      </Node>
+    </Node>
+  </NodeList>
+</Symbolconfiguration>
