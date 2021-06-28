@@ -1,0 +1,28 @@
+﻿Common Recipe;V2;TagsBouton;NormalRecipe;0;Conditional;Vijeo-Designer 6.2.6
+
+#RECIPEBLOCK;RecipeName;RecipeID;buttons_FR[0];buttons_HON[0];buttons_GB[0];buttons_FR[1];buttons_HON[1];buttons_GB[1];buttons_FR[2];buttons_HON[2];buttons_GB[2];buttons_FR[3];buttons_HON[3];buttons_GB[3];buttons_FR[4];buttons_HON[4];buttons_GB[4]
+DataType;;;STRING;STRING;STRING;STRING;STRING;STRING;STRING;STRING;STRING;STRING;STRING;STRING;STRING;STRING;STRING
+Minimum;;;;;;;;;;;;;;;;;
+Maximum;;;;;;;;;;;;;;;;;
+RecipeSet;buttonTexts;1;Bouton 3;Gomb 3;Button 3;Bouton 4;Gomb 4;Button 4;Bouton 5;Gomb 5;Button 5;Bouton 6;Gomb 6;Button 6;Bouton 7;Gomb 7;Button 7
+RecipeSet;buttonTexts01;2;Bouton 3;Gomb 3;Button 3;Bouton 4;Gomb 4;Button 4;Bouton 5;Gomb 5;Button 5;Bouton 6;Gomb 6;Button 6;Bouton 7;Gomb 7;Button 7
+#ENDRECIPEBLOCK
+
+#INGREDIENTLABELBLOCK;Locale;LanguageID;buttons_FR[0];buttons_HON[0];buttons_GB[0];buttons_FR[1];buttons_HON[1];buttons_GB[1];buttons_FR[2];buttons_HON[2];buttons_GB[2];buttons_FR[3];buttons_HON[3];buttons_GB[3];buttons_FR[4];buttons_HON[4];buttons_GB[4]
+Français;FRA;1;Bouton 3 FR;Bouton 3 HU;Bouton 3 EN;Bouton 4 FR;Bouton 4 HU;Bouton 4 EN;Bouton 5 FR;Bouton 5 HU;Bouton 5 EN;Bouton 6 FR;Bouton 6 HU;Bouton 6 EN;Bouton 7 FR;Bouton 7 HU;Bouton 7 EN
+Hongrois;FRA;2;Gomb 3 FR;Gomb 3 HU;Gomb 3 EN;Gomb 4 FR;Gomb 4 HU;Gomb 4 EN;Gomb 5 FR;Gomb 5 HU;Gomb 5 EN;Gomb 6 FR;Gomb 6 HU;Gomb 6 EN;Gomb 7 FR;Gomb 7 HU;Gomb 7 EN
+Anglais;ENU;3;Button 3 FR;Button 3 HU;Button 3 EN;Button 4 FR;Button 4 HU;Button 4 EN;Button 5 FR;Button 5 HU;Button 5 EN;Button 6 FR;Button 6 HU;Button 6 EN;Button 7 FR;Button 7 HU;Button 7 EN
+#ENDINGREDIENTLABELBLOCK
+
+#RECIPELABELBLOCK;Locale;LanguageID
+Français;FRA;1;codem;codem01
+Hongrois;FRA;2;codem;codem01
+Anglais;ENU;3;codem;codem01
+#ENDRECIPELABELBLOCK
+
+#RECIPEGROUPLABELBLOCK;Locale;LanguageID;TagsBouton
+Français;FRA;1;Titre des boutons IHM
+Hongrois;FRA;2;RecipeGroup2
+Anglais;ENU;3;RecipeGroup2
+#ENDRECIPEGROUPLABELBLOCK
+
