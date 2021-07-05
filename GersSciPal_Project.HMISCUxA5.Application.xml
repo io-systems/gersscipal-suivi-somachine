@@ -9,12 +9,13 @@
     <TypeSimple name="T_UDINT" size="4" swapsize="4" typeclass="UDInt" iecname="UDINT" />
     <TypeSimple name="T_STRING_12_" size="13" swapsize="0" typeclass="String" iecname="STRING(12)" />
     <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
-    <TypeUserDef name="T_alarmes" size="5" nativesize="5" typeclass="Userdef" iecname="alarmes">
+    <TypeUserDef name="T_alarmes" size="6" nativesize="6" typeclass="Userdef" iecname="alarmes">
       <UserDefElement type="T_BOOL" iecname="attenteServeur" byteoffset="0" />
       <UserDefElement type="T_BOOL" iecname="attenteMariadb" byteoffset="1" />
       <UserDefElement type="T_BOOL" iecname="blocageMachine" byteoffset="2" />
       <UserDefElement type="T_BOOL" iecname="blocEvent" byteoffset="3" />
       <UserDefElement type="T_BOOL" iecname="blocOF" byteoffset="4" />
+      <UserDefElement type="T_BOOL" iecname="nodeREDLife" byteoffset="5" />
     </TypeUserDef>
     <TypeArray name="T_ARRAY__0__15__OF_BOOL" size="16" nativesize="16" typeclass="Array" iecname="ARRAY [0..15] OF BOOL" basetype="T_BOOL">
       <ArrayDim minrange="0" maxrange="15" />
@@ -51,6 +52,7 @@
         <Node name="CNT1" type="T_UDINT" access="ReadWrite" />
         <Node name="CNT2" type="T_UDINT" access="ReadWrite" />
         <Node name="CODEM" type="T_STRING_8_" access="ReadWrite" />
+        <Node name="DBOK" type="T_BOOL" access="ReadWrite" />
         <Node name="gvl_counterWatch_ptLife" type="T_TIME" access="ReadWrite" />
         <Node name="gvl_counterWatch_ptRate" type="T_TIME" access="ReadWrite" />
         <Node name="ihmButtons" type="T_ARRAY__0__15__OF_BOOL" access="ReadWrite" />
@@ -58,12 +60,14 @@
         <Node name="ihmOFManager" type="T__structIHMOFManager" access="ReadWrite" />
         <Node name="initFifoCount" type="T_BOOL" access="ReadWrite" />
         <Node name="messageID" type="T_UDINT" access="ReadWrite" />
+        <Node name="NODEREDOK" type="T_BOOL" access="ReadWrite" />
         <Node name="OFNR" type="T_STRING_12_" access="ReadWrite" />
         <Node name="Param_cycleTime" type="T_TIME" access="ReadWrite" />
         <Node name="Param_limitTime" type="T_TIME" access="ReadWrite" />
         <Node name="Param_maxTime" type="T_TIME" access="ReadWrite" />
         <Node name="Param_minTime" type="T_TIME" access="ReadWrite" />
         <Node name="Param_onOffTime" type="T_TIME" access="ReadWrite" />
+        <Node name="RPIOK" type="T_BOOL" access="ReadWrite" />
         <Node name="Unixtime" type="T_UDINT" access="ReadWrite" />
       </Node>
     </Node>
