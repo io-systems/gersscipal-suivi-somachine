@@ -49,6 +49,7 @@
     <Node name="Application">
       <Node name="GVL">
         <Node name="alm" type="T_alarmes" access="ReadWrite" />
+        <Node name="bypassAutoOut" type="T_BOOL" access="ReadWrite" />
         <Node name="CNT1" type="T_UDINT" access="ReadWrite" />
         <Node name="CNT2" type="T_UDINT" access="ReadWrite" />
         <Node name="CODEM" type="T_STRING_8_" access="ReadWrite" />
@@ -62,8 +63,6 @@
         <Node name="messageID" type="T_UDINT" access="ReadWrite" />
         <Node name="NODEREDOK" type="T_BOOL" access="ReadWrite" />
         <Node name="OFNR" type="T_STRING_12_" access="ReadWrite" />
-        <Node name="Param_cycleTime" type="T_TIME" access="ReadWrite" />
-        <Node name="Param_limitTime" type="T_TIME" access="ReadWrite" />
         <Node name="Param_maxTime" type="T_TIME" access="ReadWrite" />
         <Node name="Param_minTime" type="T_TIME" access="ReadWrite" />
         <Node name="Param_onOffTime" type="T_TIME" access="ReadWrite" />
