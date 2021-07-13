@@ -18,25 +18,28 @@
     <TypeSimple name="T_STRING_12_" size="13" swapsize="0" typeclass="String" iecname="STRING(12)" />
     <TypeSimple name="T_STRING_8_" size="9" swapsize="0" typeclass="String" iecname="STRING(8)" />
     <TypeSimple name="T_STRING_32_" size="33" swapsize="0" typeclass="String" iecname="STRING(32)" />
-    <TypeUserDef name="T__structModbusOut" size="112" nativesize="112" typeclass="Userdef" iecname="_structModbusOut">
+    <TypeUserDef name="T__structModbusMessage" size="88" nativesize="88" typeclass="Userdef" iecname="_structModbusMessage">
+      <UserDefElement type="T_UDINT" iecname="ID" byteoffset="0" />
+      <UserDefElement type="T_INT" iecname="STATUT" byteoffset="4" />
+      <UserDefElement type="T_STRING_12_" iecname="OFNR" byteoffset="6" />
+      <UserDefElement type="T_STRING_8_" iecname="CODEM" byteoffset="19" />
+      <UserDefElement type="T_STRING_8_" iecname="OPERATION" byteoffset="28" />
+      <UserDefElement type="T_STRING_8_" iecname="ALEA" byteoffset="37" />
+      <UserDefElement type="T_STRING_32_" iecname="LIBELLE" byteoffset="46" />
+      <UserDefElement type="T_UDINT" iecname="HORODATAGE" byteoffset="80" />
+      <UserDefElement type="T_INT" iecname="VALEUR" byteoffset="84" />
+    </TypeUserDef>
+    <TypeUserDef name="T__structModbusOut" size="116" nativesize="116" typeclass="Userdef" iecname="_structModbusOut">
       <UserDefElement type="T_UDINT" iecname="CNT1" byteoffset="0" />
       <UserDefElement type="T_UDINT" iecname="CNT2" byteoffset="4" />
-      <UserDefElement type="T_UDINT" iecname="ID" byteoffset="8" />
-      <UserDefElement type="T_INT" iecname="STATUT" byteoffset="12" />
-      <UserDefElement type="T_STRING_12_" iecname="OFNR" byteoffset="14" />
-      <UserDefElement type="T_STRING_8_" iecname="CODEM" byteoffset="27" />
-      <UserDefElement type="T_STRING_8_" iecname="OPERATION" byteoffset="36" />
-      <UserDefElement type="T_STRING_8_" iecname="ALEA" byteoffset="45" />
-      <UserDefElement type="T_STRING_32_" iecname="LIBELLE" byteoffset="54" />
-      <UserDefElement type="T_UDINT" iecname="HORODATAGE" byteoffset="88" />
-      <UserDefElement type="T_INT" iecname="VALEUR" byteoffset="92" />
-      <UserDefElement type="T_INT" iecname="RUN" byteoffset="94" />
-      <UserDefElement type="T_UDINT" iecname="CRTHORODATAGE" byteoffset="96" />
-      <UserDefElement type="T_UDINT" iecname="CADENCE" byteoffset="100" />
-      <UserDefElement type="T_UDINT" iecname="CADENCE_MOYENNE" byteoffset="104" />
-      <UserDefElement type="T_INT" iecname="life" byteoffset="108" />
+      <UserDefElement type="T__structModbusMessage" iecname="MESSAGE" byteoffset="8" />
+      <UserDefElement type="T_INT" iecname="RUN" byteoffset="96" />
+      <UserDefElement type="T_UDINT" iecname="CRTHORODATAGE" byteoffset="100" />
+      <UserDefElement type="T_UDINT" iecname="CADENCE" byteoffset="104" />
+      <UserDefElement type="T_UDINT" iecname="CADENCE_MOYENNE" byteoffset="108" />
+      <UserDefElement type="T_INT" iecname="life" byteoffset="112" />
     </TypeUserDef>
-    <TypeUserDef name="T__structModbus" size="124" nativesize="124" typeclass="Userdef" iecname="_structModbus">
+    <TypeUserDef name="T__structModbus" size="128" nativesize="128" typeclass="Userdef" iecname="_structModbus">
       <UserDefElement type="T__structModbusIn" iecname="modbusIn" byteoffset="0" />
       <UserDefElement type="T__structModbusOut" iecname="modbusOut" byteoffset="12" />
     </TypeUserDef>
