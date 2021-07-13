@@ -7,7 +7,39 @@
   </Header>
   <TypeList>
     <TypeSimple name="T_UDINT" size="4" swapsize="4" typeclass="UDInt" iecname="UDINT" />
+    <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
+    <TypeUserDef name="T__structModbusIn" size="12" nativesize="12" typeclass="Userdef" iecname="_structModbusIn">
+      <UserDefElement type="T_UDINT" iecname="ID" byteoffset="0" />
+      <UserDefElement type="T_INT" iecname="STATUT" byteoffset="4" />
+      <UserDefElement type="T_INT" iecname="lifeWD" byteoffset="6" />
+      <UserDefElement type="T_INT" iecname="rate" byteoffset="8" />
+      <UserDefElement type="T_INT" iecname="reserve" byteoffset="10" />
+    </TypeUserDef>
     <TypeSimple name="T_STRING_12_" size="13" swapsize="0" typeclass="String" iecname="STRING(12)" />
+    <TypeSimple name="T_STRING_8_" size="9" swapsize="0" typeclass="String" iecname="STRING(8)" />
+    <TypeSimple name="T_STRING_32_" size="33" swapsize="0" typeclass="String" iecname="STRING(32)" />
+    <TypeUserDef name="T__structModbusOut" size="112" nativesize="112" typeclass="Userdef" iecname="_structModbusOut">
+      <UserDefElement type="T_UDINT" iecname="CNT1" byteoffset="0" />
+      <UserDefElement type="T_UDINT" iecname="CNT2" byteoffset="4" />
+      <UserDefElement type="T_UDINT" iecname="ID" byteoffset="8" />
+      <UserDefElement type="T_INT" iecname="STATUT" byteoffset="12" />
+      <UserDefElement type="T_STRING_12_" iecname="OFNR" byteoffset="14" />
+      <UserDefElement type="T_STRING_8_" iecname="CODEM" byteoffset="27" />
+      <UserDefElement type="T_STRING_8_" iecname="OPERATION" byteoffset="36" />
+      <UserDefElement type="T_STRING_8_" iecname="ALEA" byteoffset="45" />
+      <UserDefElement type="T_STRING_32_" iecname="LIBELLE" byteoffset="54" />
+      <UserDefElement type="T_UDINT" iecname="HORODATAGE" byteoffset="88" />
+      <UserDefElement type="T_INT" iecname="VALEUR" byteoffset="92" />
+      <UserDefElement type="T_INT" iecname="RUN" byteoffset="94" />
+      <UserDefElement type="T_UDINT" iecname="CRTHORODATAGE" byteoffset="96" />
+      <UserDefElement type="T_UDINT" iecname="CADENCE" byteoffset="100" />
+      <UserDefElement type="T_UDINT" iecname="CADENCE_MOYENNE" byteoffset="104" />
+      <UserDefElement type="T_INT" iecname="life" byteoffset="108" />
+    </TypeUserDef>
+    <TypeUserDef name="T__structModbus" size="124" nativesize="124" typeclass="Userdef" iecname="_structModbus">
+      <UserDefElement type="T__structModbusIn" iecname="modbusIn" byteoffset="0" />
+      <UserDefElement type="T__structModbusOut" iecname="modbusOut" byteoffset="12" />
+    </TypeUserDef>
     <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
     <TypeUserDef name="T_alarmes" size="6" nativesize="6" typeclass="Userdef" iecname="alarmes">
       <UserDefElement type="T_BOOL" iecname="attenteServeur" byteoffset="0" />
@@ -20,7 +52,6 @@
     <TypeArray name="T_ARRAY__0__15__OF_BOOL" size="16" nativesize="16" typeclass="Array" iecname="ARRAY [0..15] OF BOOL" basetype="T_BOOL">
       <ArrayDim minrange="0" maxrange="15" />
     </TypeArray>
-    <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
     <TypeUserDef name="T__structIHMOFManager" size="26" nativesize="26" typeclass="Userdef" iecname="_structIHMOFManager">
       <UserDefElement type="T_BOOL" iecname="startOF" byteoffset="0" />
       <UserDefElement type="T_BOOL" iecname="stopOF" byteoffset="1" />
@@ -33,9 +64,7 @@
       <UserDefElement type="T_STRING_12_" iecname="newOF" byteoffset="10" />
       <UserDefElement type="T_INT" iecname="cnt2" byteoffset="24" />
     </TypeUserDef>
-    <TypeSimple name="T_STRING_8_" size="9" swapsize="0" typeclass="String" iecname="STRING(8)" />
     <TypeSimple name="T_TIME" size="4" swapsize="4" typeclass="Time" iecname="TIME" />
-    <TypeSimple name="T_STRING_32_" size="33" swapsize="0" typeclass="String" iecname="STRING(32)" />
     <TypeUserDef name="T__structMessage" size="51" nativesize="51" typeclass="Userdef" iecname="_structMessage">
       <UserDefElement type="T_STRING_8_" iecname="ihmOperations" byteoffset="0" />
       <UserDefElement type="T_STRING_8_" iecname="ihmAlea" byteoffset="9" />
@@ -50,6 +79,7 @@
       <Node name="GVL">
         <Node name="alm" type="T_alarmes" access="ReadWrite" />
         <Node name="bypassAutoOut" type="T_BOOL" access="ReadWrite" />
+        <Node name="closePopup" type="T_BOOL" access="ReadWrite" />
         <Node name="CNT1" type="T_UDINT" access="ReadWrite" />
         <Node name="CNT2" type="T_UDINT" access="ReadWrite" />
         <Node name="CODEM" type="T_STRING_8_" access="ReadWrite" />
@@ -61,6 +91,7 @@
         <Node name="ihmOFManager" type="T__structIHMOFManager" access="ReadWrite" />
         <Node name="initFifoCount" type="T_BOOL" access="ReadWrite" />
         <Node name="messageID" type="T_UDINT" access="ReadWrite" />
+        <Node name="modbusInOut" type="T__structModbus" access="ReadWrite" />
         <Node name="NODEREDOK" type="T_BOOL" access="ReadWrite" />
         <Node name="OFNR" type="T_STRING_12_" access="ReadWrite" />
         <Node name="Param_maxTime" type="T_TIME" access="ReadWrite" />
