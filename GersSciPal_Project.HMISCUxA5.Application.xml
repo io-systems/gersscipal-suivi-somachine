@@ -88,6 +88,7 @@
         <Node name="CODEM" type="T_STRING_8_" access="ReadWrite" />
         <Node name="DBOK" type="T_BOOL" access="ReadWrite" />
         <Node name="gvl_counterWatch_ptLife" type="T_TIME" access="ReadWrite" />
+        <Node name="gvl_counterWatch_ptPercent" type="T_INT" access="ReadWrite" />
         <Node name="gvl_counterWatch_ptRate" type="T_TIME" access="ReadWrite" />
         <Node name="ihmButtons" type="T_ARRAY__0__15__OF_BOOL" access="ReadWrite" />
         <Node name="ihmMessages" type="T_ARRAY__0__31__OF__structMessage" access="ReadWrite" />
