@@ -76,11 +76,18 @@
     <TypeArray name="T_ARRAY__0__31__OF__structMessage" size="1632" nativesize="1632" typeclass="Array" iecname="ARRAY [0..31] OF _structMessage" basetype="T__structMessage">
       <ArrayDim minrange="0" maxrange="31" />
     </TypeArray>
+    <TypeSimple name="T_STRING_16_" size="17" swapsize="0" typeclass="String" iecname="STRING(16)" />
+    <TypeArray name="T_ARRAY__0__15__OF_STRING_16_" size="272" nativesize="272" typeclass="Array" iecname="ARRAY [0..15] OF STRING(16)" basetype="T_STRING_16_">
+      <ArrayDim minrange="0" maxrange="15" />
+    </TypeArray>
   </TypeList>
   <NodeList>
     <Node name="Application">
       <Node name="GVL">
         <Node name="alm" type="T_alarmes" access="ReadWrite" />
+        <Node name="buttons_EN" type="T_ARRAY__0__15__OF_STRING_16_" access="ReadWrite" />
+        <Node name="buttons_FR" type="T_ARRAY__0__15__OF_STRING_16_" access="ReadWrite" />
+        <Node name="buttons_HU" type="T_ARRAY__0__15__OF_STRING_16_" access="ReadWrite" />
         <Node name="bypassAutoOut" type="T_BOOL" access="ReadWrite" />
         <Node name="closePopup" type="T_BOOL" access="ReadWrite" />
         <Node name="CNT1" type="T_UDINT" access="ReadWrite" />
